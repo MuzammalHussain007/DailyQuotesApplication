@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="Rate Us"
+        app:showAsAction="collapseActionView"
+        android:id="@+id/rate_us"/>
+
+    <item
+        android:title="Share App"
+        app:showAsAction="collapseActionView"
+        android:id="@+id/share_app"/>
+
+    <item
+        android:title="More Apps"
+        app:showAsAction="collapseActionView"
+        android:id="@+id/more_app"/>
+
+    <item
+        android:title="Privacy Policy"
+        app:showAsAction="collapseActionView"
+        android:id="@+id/privacy"/>
+
+    <item
+        android:title="Login"
+        app:showAsAction="collapseActionView"
+        android:id="@+id/login"/>
+
+
+    <item
+        android:title="Logout"
+        app:showAsAction="collapseActionView"
+        android:id="@+id/logout"/>
+</menu>
