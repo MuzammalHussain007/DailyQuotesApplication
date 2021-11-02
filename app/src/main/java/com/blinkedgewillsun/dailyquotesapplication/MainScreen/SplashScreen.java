@@ -22,19 +22,13 @@ import com.blinkedgewillsun.dailyquotesapplication.R;
 public class SplashScreen extends AppCompatActivity {
     private BroadcastReceiver broadcastReceiver ;
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        unregisterReceiver(broadcastReceiver);
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        broadcastReceiver = new NetworkReceiver();
-        registerReceiver(broadcastReceiver,new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
-        new Handler().postDelayed(new Runnable() {
+         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
 

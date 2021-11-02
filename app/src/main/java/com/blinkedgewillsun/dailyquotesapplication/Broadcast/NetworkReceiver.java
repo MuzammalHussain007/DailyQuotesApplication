@@ -8,6 +8,10 @@ import android.net.NetworkInfo;
 import android.util.Log;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.blinkedgewillsun.dailyquotesapplication.MainScreen.InternetActivity;
+
 public class NetworkReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -15,12 +19,10 @@ public class NetworkReceiver extends BroadcastReceiver {
         {
             boolean noConnectivity = intent.getBooleanExtra(ConnectivityManager.EXTRA_NO_CONNECTIVITY, false);
             if (noConnectivity) {
-                Toast.makeText(context, "Disconnected", Toast.LENGTH_SHORT).show();
-                Log.d("ad______", "onReceive:Disconnected");
+                context.startActivity(new Intent(context, InternetActivity.class));
+                ((AppCompatActivity)context).finish();
             } else {
-                Toast.makeText(context, "Connected", Toast.LENGTH_SHORT).show();
                 Log.d("ad______", "onReceive: connected");
-
             }
         }
 

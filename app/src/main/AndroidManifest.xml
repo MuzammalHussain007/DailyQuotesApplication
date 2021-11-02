@@ -16,18 +16,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DailyQuotes"
         android:usesCleartextTraffic="true">
-
-        <activity android:name="com.braintreepayments.api.BraintreeBrowserSwitchActivity"
+        <activity android:name=".MainScreen.InternetActivity"></activity>
+        <activity
+            android:name="com.braintreepayments.api.BraintreeBrowserSwitchActivity"
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data android:scheme="${applicationId}.braintree" />
             </intent-filter>
         </activity>
-
-
         <activity
             android:name=".MainScreen.ForgetPasswordActivity"
             android:exported="true" />
@@ -39,8 +40,7 @@
             android:exported="true" />
         <activity
             android:name=".MainScreen.MasterActivity"
-            android:exported="true" >
-        </activity>
+            android:exported="true"></activity>
 
         <receiver android:name=".Broadcast.NetworkReceiver">
             <intent-filter>

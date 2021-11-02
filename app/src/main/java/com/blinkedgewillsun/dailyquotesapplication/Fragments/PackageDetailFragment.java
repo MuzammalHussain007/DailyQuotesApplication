@@ -57,8 +57,7 @@ public class PackageDetailFragment extends Fragment {
         subs_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-             //    hitBraintreeTokenApi();
-
+               hitBraintreeTokenApi();
             }
         });
         return view;
@@ -73,7 +72,9 @@ public class PackageDetailFragment extends Fragment {
                     if (response.body() != null) {
                         if (response.body().getStatus()) {
                             DropInRequest dropInRequest = new DropInRequest().clientToken(response.body().getToken());
+                            dropInRequest.disablePayPal();
                             startActivityForResult(dropInRequest.getIntent(getContext()), REQUEST_CODE);
+                            progressDialog.dismiss();
 
                         } else {
                             progressDialog.dismiss();
