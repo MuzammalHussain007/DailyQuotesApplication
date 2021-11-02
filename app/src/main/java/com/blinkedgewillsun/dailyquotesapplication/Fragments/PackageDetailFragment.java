@@ -46,7 +46,6 @@ public class PackageDetailFragment extends Fragment {
     private ProgressDialog progressDialog;
     private String price ;
     private String pkgID;
-    private int random;
 
     String nonce = "";
 
@@ -59,7 +58,6 @@ public class PackageDetailFragment extends Fragment {
             @Override
             public void onClick(View v) {
              //    hitBraintreeTokenApi();
-                Toast.makeText(getContext(), ""+pkgID, Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -101,7 +99,7 @@ public class PackageDetailFragment extends Fragment {
             if (requestCode == REQUEST_CODE) {
                 DropInResult result = data.getParcelableExtra(DropInResult.EXTRA_DROP_IN_RESULT);
                 String paymentMethodNonce = result.getPaymentMethodNonce().getNonce();
-                setCheckOutApi(new UserUtils(getContext()).getUserId(), String.valueOf(random), "1", price, paymentMethodNonce);
+                setCheckOutApi(new UserUtils(getContext()).getUserId(), pkgID, "1", price, paymentMethodNonce);
 
             }
         } else if (resultCode == RESULT_CANCELED) {
@@ -156,12 +154,9 @@ public class PackageDetailFragment extends Fragment {
         subs_btn = view.findViewById(R.id.btn_subscribe);
         Bundle bundle = this.getArguments();
         if (bundle != null) {
-//            package_duration.setText("" + getArguments().getString("duration") + " Days subscription");
-
             price = getArguments().getString("price");
-            pkgID = getArguments().getString("abw");
+            pkgID = getArguments().getString("id");
             Log.d("fsd____", ""+pkgID);
-            package_duration.setText("" + getArguments().getString("duration") + " Days subscription");
         }
         progressDialog = new ProgressDialog(getContext(), R.style.MyAlertDialogStyle);
         progressDialog.setMessage("Please Wait");

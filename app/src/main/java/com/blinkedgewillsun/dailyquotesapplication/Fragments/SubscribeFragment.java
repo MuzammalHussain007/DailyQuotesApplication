@@ -92,7 +92,7 @@ public class SubscribeFragment extends Fragment {
             Bundle bundle = new Bundle();
             bundle.putString("title", package__1List.get(0).getCatName());
             bundle.putString("price", package__1List.get(0).getPrice());
-            bundle.putString("abw",package__1List.get(0).getPkgId());
+            bundle.putString("id",package__1List.get(0).getPkgId());
             bundle.putString("duration", package__1List.get(0).getDuration());
             bundle.putString("description", package__1List.get(0).getDescription());
             packageDetailFragment.setArguments(bundle);

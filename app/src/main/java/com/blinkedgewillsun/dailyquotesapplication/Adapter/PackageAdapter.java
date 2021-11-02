@@ -61,11 +61,11 @@ public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.PackageA
                 AppCompatActivity activity = (AppCompatActivity) v.getContext();
                 PackageDetailFragment packageDetailFragment = new PackageDetailFragment();
                 Bundle bundle = new Bundle();
-
                 int prevPos = lastCheckedPos;
                 lastCheckedPos = holder.getAbsoluteAdapterPosition();
                 notifyItemChanged(prevPos);
                 notifyItemChanged(lastCheckedPos);
+                bundle.putString("id", package__1List.get(holder.getAbsoluteAdapterPosition()).getPkgId());
                 bundle.putString("title", package__1List.get(holder.getAbsoluteAdapterPosition()).getCatName());
                 bundle.putString("price", package__1List.get(holder.getAbsoluteAdapterPosition()).getPrice());
                 bundle.putString("duration", package__1List.get(holder.getAbsoluteAdapterPosition()).getDuration());
